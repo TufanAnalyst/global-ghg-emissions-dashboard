@@ -7,7 +7,7 @@ _Who emits the most, who is climbing, who is historically responsible, and who t
 
 This project takes public greenhouse gas (GHG) and CO2 emissions tables from Wikipedia and turns them into an interactive Power BI dashboard. The workflow covers the full analytics lifecycle: web scraping, data cleaning and merging, data modeling, DAX measure design, and dashboard storytelling.
 
-![Dashboard](docs/dashboard.png)
+![Dashboard](docs/dashboard.PNG)
 
 ---
 ## Business Problem
