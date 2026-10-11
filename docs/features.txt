@@ -1,0 +1,9 @@
+country — the country or territory name
+ghg_2023_kt — total greenhouse gases that country emitted in 2023 (CO2 + methane + nitrous oxide combined), in kilotons
+pct_global_2023 — what % of the whole world's GHG emissions that country is responsible for
+pct_change_1990_2023 — how much that country's GHG emissions went up or down since 1990, in %
+ghg_per_capita_2023 — GHG emissions divided by population — how much one average person in that country emits
+co2_2023_kt — just the CO2 part of emissions in 2023 (excludes methane/other gases), in kilotons
+co2_per_capita_2023 — CO2 emissions per person
+co2_cumulative_1970_2023_kt — total CO2 that country has emitted added up over the whole 1970–2023 period
+co2_pct_global_2023 — what % of the world's CO2 (not total GHG) that country produced in 2023

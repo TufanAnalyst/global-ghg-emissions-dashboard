@@ -1,0 +1,58 @@
+Fastest Rising Name = 
+CALCULATE(
+    SELECTEDVALUE(climate_dashboard_data[country]),
+    TOPN(1, 
+        FILTER(climate_dashboard_data, climate_dashboard_data[ghg_2023_kt] > 100000),
+        climate_dashboard_data[pct_change_1990_2023], DESC
+    )
+)
+
+Top 10 Share = 
+FORMAT(
+    SUMX(
+        TOPN(10, climate_dashboard_data, climate_dashboard_data[ghg_2023_kt], DESC),
+        climate_dashboard_data[pct_global_2023]
+    ),
+    "0.0"
+) & "%"
+
+
+Top Emitter Name = 
+CALCULATE(
+    SELECTEDVALUE(climate_dashboard_data[country]),
+    TOPN(1, climate_dashboard_data, climate_dashboard_data[ghg_2023_kt], DESC)
+)
+
+
+
+Top Emitter Share = 
+FORMAT(
+    CALCULATE(
+        SELECTEDVALUE(climate_dashboard_data[pct_global_2023]),
+        TOPN(1, climate_dashboard_data, climate_dashboard_data[ghg_2023_kt], DESC)
+    ),
+    "0.0"
+) & "%"
+
+
+
+Top Per Capita Name = 
+CALCULATE(
+    SELECTEDVALUE(climate_dashboard_data[country]),
+    TOPN(1, climate_dashboard_data, climate_dashboard_data[ghg_per_capita_2023], DESC)
+)
+
+
+Top Per Capita Value = 
+CALCULATE(
+    SELECTEDVALUE(climate_dashboard_data[ghg_per_capita_2023]),
+    TOPN(1, climate_dashboard_data, climate_dashboard_data[ghg_per_capita_2023], DESC)
+)
+
+
+
+World Total GHG Label = 
+VAR TotalGt = SUM(climate_dashboard_data[ghg_2023_kt]) / 1000000
+RETURN FORMAT(TotalGt, "0.0") & " Gt CO2eq"
+
+
